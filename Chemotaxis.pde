@@ -1,4 +1,5 @@
- Bacteria [] bac; //declare bacteria variables here   
+ Bacteria [] bac; 
+ //declare bacteria variables here   
  void setup()   
  {     
  	size(400,400);
@@ -6,11 +7,12 @@
  	for (int i = 0; i<bac.length; i++)
  	{
  		bac[i]= new Bacteria(200,200);
+ 		bac[i].c();
  	} //initialize bacteria variables here   
  }   
  void draw()   
  {    
- 	background(0,0,0);
+ 	background(100,100,100);
  	 	for (int i = 0; i<bac.length; i++)
  	{
  		bac[i].move();
@@ -20,7 +22,7 @@
  }  
  class Bacteria    
  {
- 	int myX, myY,num1,num2,n; 
+ 	int myX, myY,num1,num2,bcolor; 
  	Bacteria(int x, int y)
  	{
  		myX=x;
@@ -35,8 +37,11 @@
  	}
  	void show()
  	{
-		n = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+ 		fill(bcolor);
  		ellipse(myX,myY,15,15);	
- 		fill(n);
+ 	}
+ 	void c()
+ 	{
+ 		bcolor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
  	}	//lots of java!   
  }    
